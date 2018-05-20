@@ -48,9 +48,15 @@ Route::get('/post', function () {
     return view('shop.post');
 });
 
-Route::get('/register', function () {
-    return view('shop.register');
-});
+Route::get('/register', [
+    'uses' => 'userController@getSignup',
+    'as' => 'shop.register'
+]);
+
+Route::post('/register',[
+    'uses' => 'userController@postSignup',
+    'as' => 'shop.register'
+]);
 
 Route::get('/account', function () {
     return view('user.account');

@@ -17,23 +17,32 @@
 
                     <hr>
 
-                    <form name="register_form" >
+                <form method="POST" action="{{ route('shop.register') }}" name="register_form" >
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" ng-model="user.name" class="form-control" id="name">
+                            <label for="name">Username</label>
+                            <input type="text"  class="form-control" name="username"  id="username">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" ng-model="user.email" class="form-control" id="email-reg">
+                            <input type="text"  class="form-control" name="email" id="email">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" ng-model="user.password" class="form-control" id="password-reg">
+                            <input type="password"  class="form-control" name="password" id="password">
                         </div>
                         <div class="text-center">
-                            <button  ng-click="add_user()" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
                         </div>
+                        {{ csrf_field() }}
+                        
                     </form>
+                    @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $error)
+                    <p>{{$error}}</p>
+                        @endforeach
+                    </div>
+                    @endif
                 </div>
             </div>
 

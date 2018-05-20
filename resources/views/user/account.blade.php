@@ -87,13 +87,13 @@ _________________________________________________________ -->
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="firstname">Firstname</label>
+                                    <label for="firstname">First name</label>
                                     <input type="text" class="form-control" id="firstname">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="lastname">Lastname</label>
+                                    <label for="lastname">Last name</label>
                                     <input type="text" class="form-control" id="lastname">
                                 </div>
                             </div>
@@ -131,7 +131,7 @@ _________________________________________________________ -->
                             </div>
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
-                                    <label for="state">State</label>
+                                    <label for="state">City</label>
                                     <select class="form-control" id="state"></select>
                                 </div>
                             </div>
