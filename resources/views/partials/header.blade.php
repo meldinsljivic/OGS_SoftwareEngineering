@@ -8,7 +8,7 @@
 
                 <a class="navbar-brand home" href="#!" data-animate-hover="bounce">
                     <img src="{{ URL::to('img/logo.png') }}" alt="Obaju logo" class="hidden-xs">
-                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
+                    <img src="{{ URL::to('img/logo-small.png') }}" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -29,7 +29,7 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="#!">Home</a>
+                    <li class="active"><a href="/">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Categories <b class="caret"></b></a>
@@ -40,7 +40,7 @@
                                         <div class="col-sm-3">
                                             
                                             <ul>
-                                                <li><a href="#!category">Action</a>
+                                                <li><a href="/category">Action</a>
                                                 </li>
                                                 <li><a href="category.html">Sports</a>
                                                 </li>
@@ -91,15 +91,15 @@
                                     </form>
             
                                     <p class="text-center text-muted">Not registered yet?</p>
-                                    <p class="text-center text-muted"><a href="#!register"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                                    <p class="text-center text-muted"><a href="/register"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
             
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <li><a href="#!register">Register</a></li>
-                    <li><a href="#!contact">Contact</a></li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
 
             </div>
@@ -108,7 +108,7 @@
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="#!basket" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                    <a href="/basket" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
                 </div>
                 <!--/.nav-collapse -->
 
