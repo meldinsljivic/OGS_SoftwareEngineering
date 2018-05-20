@@ -27,7 +27,7 @@
     <link href="{{ URL::to('css/owl.theme.css') }}" rel="stylesheet">
    
     <!-- theme stylesheet -->
-    <link href="{{ URL::to('css/style.default.css') }}" rel="stylesheet" id="theme-stylesheet">
+    <link href="{{ URL::to('css/style.blue.css') }}" rel="stylesheet" id="theme-stylesheet">
 
     <!-- your stylesheet with modifications -->
     <link href="{{ URL::to('css/custom.css') }}" rel="stylesheet">

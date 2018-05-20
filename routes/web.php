@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('shop.index');
-});
+Route::get('/', [
+    'uses' => 'ProductController@getIndex',
+    'as' => 'product.index'
+]
+);
 Route::get('/error', function () {
     return view('shop.404');
 });
