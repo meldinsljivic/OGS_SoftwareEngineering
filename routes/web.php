@@ -14,3 +14,55 @@
 Route::get('/', function () {
     return view('shop.index');
 });
+Route::get('/error', function () {
+    return view('shop.404');
+});
+
+Route::get('/basket', function () {
+    return view('shop.basket');
+});
+
+Route::get('/blog', function () {
+    return view('shop.blog');
+});
+
+Route::get('/category', function () {
+    return view('shop.category');
+});
+
+Route::get('/contact', function () {
+    return view('shop.contact');
+});
+
+Route::get('/detail', function () {
+    return view('shop.detail');
+});
+
+Route::get('/faq', function () {
+    return view('shop.faq');
+});
+
+Route::get('/post', function () {
+    return view('shop.post');
+});
+
+Route::get('/register', function () {
+    return view('shop.register');
+});
+
+Route::get('/account', function () {
+    return view('user.account');
+});
+
+Route::get('/order', function () {
+    return view('user.order');
+});
+
+Route::get('/orders', function () {
+    return view('user.orders');
+});
+
+Route::get('/wishlist', function () {
+    return view('user.wishlist');
+});
+
