@@ -31,7 +31,7 @@ _________________________________________________________ -->
                                 <a href="#!account"><i class="fa fa-user"></i> My account</a>
                             </li>
                             <li>
-                                <a href="#!"><i class="fa fa-sign-out"></i> Logout</a>
+                                <a href="{{ route('user.logout') }}"><i class="fa fa-sign-out"></i> Logout</a>
                             </li>
                         </ul>
                     </div>

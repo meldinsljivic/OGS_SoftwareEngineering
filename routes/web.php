@@ -48,19 +48,6 @@ Route::get('/post', function () {
     return view('shop.post');
 });
 
-Route::get('/register', [
-    'uses' => 'userController@getSignup',
-    'as' => 'shop.register'
-]);
-
-Route::post('/register',[
-    'uses' => 'userController@postSignup',
-    'as' => 'shop.register'
-]);
-
-Route::get('/account', function () {
-    return view('user.account');
-});
 
 Route::get('/order', function () {
     return view('user.order');
@@ -74,3 +61,36 @@ Route::get('/wishlist', function () {
     return view('user.wishlist');
 });
 
+Route::group(['middleware' => 'guest'], function(){
+    Route::get('/register', [
+        'uses' => 'userController@getSignup',
+        'as' => 'shop.register'        
+    ]);
+    
+    Route::post('/register',[
+        'uses' => 'userController@postSignup',
+        'as' => 'shop.register'        
+    ]);
+    Route::get('/login', [
+        'uses' => 'userController@getSignin',
+        'as' => 'shop.login'       
+    ]);
+    
+    Route::post('/login',[
+        'uses' => 'userController@postSignin',
+        'as' => 'shop.login'
+    ]);
+});
+
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/account', [
+        'uses' => 'userController@getProfile',
+        'as' => 'user.account'
+    ]);
+    
+    Route::get('/logout', [
+        'uses' => 'userController@getLogout',
+        'as' => 'user.logout'
+    ]);
+});
