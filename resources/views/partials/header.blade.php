@@ -81,20 +81,26 @@
                                 <h4 class="modal-title" id="Login">Customer login</h4>
                             </div>
                             <div class="modal-body">
-                                <form action="customer-orders.html" method="post">
+                                <form action="{{ route('shop.login') }}" method="post">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="email-modal" placeholder="email">
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="email">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" id="password-modal" placeholder="password">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="password">
                                     </div>
         
                                     <p class="text-center">
-                                        <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
                                     </p>
-        
+                                    {{ csrf_field() }}
                                 </form>
-        
+                                @if(count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    @foreach($errors->all() as $error)
+                                <p>{{$error}}</p>
+                                    @endforeach
+                                </div>
+                                @endif
                                 <p class="text-center text-muted">Not registered yet?</p>
                                 <p class="text-center text-muted"><a href="/register"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
         
@@ -115,7 +121,8 @@
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="/basket" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                <a href="{{ route('product.cart')}}" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">Cart 
+                    <div class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQuantity : '0'}}</div></span></a>
                 </div>
                 <!--/.nav-collapse -->
 

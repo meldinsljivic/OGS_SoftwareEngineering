@@ -94,3 +94,13 @@ Route::group(['middleware' => 'auth'], function(){
         'as' => 'user.logout'
     ]);
 });
+
+Route::get('/add-to-cart/{id}', [
+    'uses'=> 'ProductController@getAddToCart',
+    'as' => 'product.addToCart'
+]);
+
+Route::get('/cart', [
+    'uses'=> 'ProductController@getCart',
+    'as' => 'product.cart'
+]);

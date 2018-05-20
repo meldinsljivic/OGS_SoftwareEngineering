@@ -29,7 +29,7 @@
                     <p class="price">{{ $product -> price }} KM</p>
                     <p class="buttons">
                         <a href="detail.html" class="btn btn-default">View detail</a>
-                        <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                        <a href="{{ route('product.addToCart', ['id' => $product->id])}}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </p>
                 </div>
                 <!-- /.text -->
