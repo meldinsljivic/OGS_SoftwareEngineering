@@ -64,8 +64,8 @@
         </div>
         <div class="pull-right">
             <button class="btn btn-default"><i class="fa fa-refresh"></i> Update basket</button>
-            <button type="submit" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i>
-            </button>
+        <a href="{{ route('checkout')}}" type="button" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i>
+            </a>
         </div>
     </div>
 
