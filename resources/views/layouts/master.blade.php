@@ -51,7 +51,8 @@
       
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ URL::to('js/jquery-1.11.0.min.js') }}"></script>
+
     <script src="{{ URL::to('js/bootstrap.min.js') }}"></script>
     <script src="{{ URL::to('js/jquery.cookie.js') }}"></script>
     <script src="{{ URL::to('js/waypoints.min.js') }}"></script>
@@ -59,7 +60,7 @@
     <script src="{{ URL::to('js/bootstrap-hover-dropdown.js') }}"></script>
     <script src="{{ URL::to('js/owl.carousel.min.js') }}"></script>
     <script src="{{ URL::to('js/front.js') }}"></script>
-    <script src="https://js.stripe.com/v3/"></script>
+
 @yield('scripts')
 
 </body>

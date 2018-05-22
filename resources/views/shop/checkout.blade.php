@@ -156,6 +156,7 @@
 
 @endsection
 @section('scripts')
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://js.stripe.com/v3/"></script>
 <script type="text/javascript" src="{{ URL::to('js/checkout.js') }}"></script>
 @endsection
