@@ -20,16 +20,12 @@
                         <ul class="nav nav-pills nav-justified">
                             <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>Information</a>
                             </li>
-                            <li class="disabled"><a href="#"><i class="fa fa-truck"></i><br>Delivery Method</a>
-                            </li>
-                            <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
-                            </li>
                             <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
                             </li>
                         </ul>
 
                         <div class="content">
-                            {{-- <div class="row">
+                            <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="name">Name</label>
@@ -39,67 +35,13 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="adress">Adress</label>
-                                        <input type="text" class="form-control" id="adress"required>
+                                        <input type="text" class="form-control" name="address" id="adress"required>
                                     </div>
                                 </div>
                             </div>
-                            <!-- /.row -->
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="card-name">Card Holder Name</label>
-                                        <input type="text" class="form-control" id="card-name" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="card-number">Credit Card Number</label>
-                                        <input type="text" class="form-control" id="card-number" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.row -->
-
-                            <div class="row">
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="form-group">
-                                        <label for="card-expiry-month">Expiration Month</label>
-                                        <input type="text" class="form-control" id="card-expiry-month" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="form-group">
-                                        <label for="card-expiry-year">Expiration Year</label>
-                                        <input type="text" class="form-control" id="card-expiry-year" required> 
-                                    </div>
-                                </div>
-                               {{--  <div class="col-sm-6 col-md-3">
-                                    <div class="form-group">
-                                        <label for="state">State</label>
-                                        <select class="form-control" id="state"></select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="form-group">
-                                        <label for="country">Country</label>
-                                        <select class="form-control" id="country"></select>
-                                    </div>
-                                </div> --}}
-
-                             {{--    <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="cvc">CVC</label>
-                                        <input type="text" class="form-control" id="cvc" required>
-                                    </div>
-                                </div> --}}
-                                <div id="card-element" class="form-control"></div>
-                                {{-- <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="text" class="form-control" id="email">
-                                    </div>
-                                </div> --}} 
+                            
+                            <div id="card-element" class="form-control"></div>
+                               
 
                             </div>
                             <!-- /.row -->
@@ -120,9 +62,9 @@
                 <!-- /.box -->
 
 
-            </div>
+            
             <!-- /.col-md-9 -->
-
+            
             <div class="col-md-3">
 
                 <div class="box" id="order-summary">

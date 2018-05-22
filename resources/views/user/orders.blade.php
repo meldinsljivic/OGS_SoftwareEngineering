@@ -62,51 +62,19 @@ _________________________________________________________ -->
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($orders as $order)
                                 <tr>
-                                    <th># 1735</th>
+                                    @foreach($order->cart->items as $item)
+                                    <th>{{ $item['item']['title'] }} | {{ $item['quantity'] }}</th>
                                     <td>22/06/2013</td>
-                                    <td>$ 150.00</td>
+                                <td>{{ $item['price'] }} KM</td>
                                     <td><span class="label label-info">Being prepared</span>
                                     </td>
                                     <td><a href="#!order" class="btn btn-primary btn-sm">View</a>
                                     </td>
+                                    @endforeach
                                 </tr>
-                                <tr>
-                                    <th># 1735</th>
-                                    <td>22/06/2013</td>
-                                    <td>$ 150.00</td>
-                                    <td><span class="label label-info">Being prepared</span>
-                                    </td>
-                                    <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th># 1735</th>
-                                    <td>22/06/2013</td>
-                                    <td>$ 150.00</td>
-                                    <td><span class="label label-success">Received</span>
-                                    </td>
-                                    <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th># 1735</th>
-                                    <td>22/06/2013</td>
-                                    <td>$ 150.00</td>
-                                    <td><span class="label label-danger">Cancelled</span>
-                                    </td>
-                                    <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th># 1735</th>
-                                    <td>22/06/2013</td>
-                                    <td>$ 150.00</td>
-                                    <td><span class="label label-warning">On hold</span>
-                                    </td>
-                                    <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

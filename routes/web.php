@@ -93,6 +93,19 @@ Route::group(['middleware' => 'auth'], function(){
         'uses' => 'userController@getLogout',
         'as' => 'user.logout'
     ]);
+    Route::get('/checkout', [
+        'uses'=> 'ProductController@getCheckout',
+        'as' => 'checkout'
+    ]);
+    
+    Route::post('/checkout', [
+        'uses'=> 'ProductController@postCheckout',
+        'as' => 'checkout'
+    ]);
+    Route::get('/orders', [
+        'uses' => 'userController@getOrders',
+        'as' => 'user.orders'
+    ]);
 });
 
 Route::get('/add-to-cart/{id}', [
@@ -105,12 +118,3 @@ Route::get('/cart', [
     'as' => 'product.cart'
 ]);
 
-Route::get('/checkout', [
-    'uses'=> 'ProductController@getCheckout',
-    'as' => 'checkout'
-]);
-
-Route::post('/checkout', [
-    'uses'=> 'ProductController@postCheckout',
-    'as' => 'checkout'
-]);
