@@ -12,6 +12,9 @@
             <div class="col-md-9" id="checkout">
 
                 <div class="box">
+                <div id="charge-error" class="alert alert-danger {{ !Session::has('error') ? 'hidden' : '' }}">
+                {{Session::get('error')}}
+                </div>
                     <form method="post" action="{{ route('checkout')}}" id="checkout-form">
                         <h1>Checkout</h1>
                         <ul class="nav nav-pills nav-justified">
@@ -26,11 +29,11 @@
                         </ul>
 
                         <div class="content">
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" required>
+                                        <input type="text" class="form-control" name="name" id="name" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -84,18 +87,19 @@
                                     </div>
                                 </div> --}}
 
-                                <div class="col-sm-6">
+                             {{--    <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="cvc">CVC</label>
                                         <input type="text" class="form-control" id="cvc" required>
                                     </div>
-                                </div>
+                                </div> --}}
+                                <div id="card-element" class="form-control"></div>
                                 {{-- <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <input type="text" class="form-control" id="email">
                                     </div>
-                                </div> --}}
+                                </div> --}} 
 
                             </div>
                             <!-- /.row -->
@@ -130,21 +134,10 @@
                     <div class="table-responsive">
                         <table class="table">
                             <tbody>
-                                <tr>
-                                    <td>Order subtotal</td>
-                                    <th>$446.00</th>
-                                </tr>
-                                <tr>
-                                    <td>Shipping and handling</td>
-                                    <th>$10.00</th>
-                                </tr>
-                                <tr>
-                                    <td>Tax</td>
-                                    <th>$0.00</th>
-                                </tr>
+                                
                                 <tr class="total">
-                                    <td>Total</td>
-                                    <th>{{ $total }}</th>
+                                    <td>Total:</td>
+                                    <th>{{ $total }} KM</th>
                                 </tr>
                             </tbody>
                         </table>
@@ -161,4 +154,8 @@
     <!-- /#content -->
 
 
+@endsection
+@section('scripts')
+
+<script type="text/javascript" src="{{ URL::to('js/checkout.js') }}"></script>
 @endsection

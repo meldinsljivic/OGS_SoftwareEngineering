@@ -14,7 +14,7 @@
                     <h1>Shopping cart</h1>
                     
 @if(Session::has('cart'))
-<p class="text-muted">You currently have 3 item(s) in your cart.</p>
+<p class="text-muted">You currently have {{Session::get('cart')->totalQuantity}} item(s) in your cart.</p>
 <div class="table-responsive">
         <table class="table">
             <thead>
@@ -74,126 +74,21 @@
 </div>
 <!-- /.box -->
 
-
-<div class="row same-height-row">
-<div class="col-md-3 col-sm-6">
-    <div class="box same-height">
-        <h3>You may also like these products</h3>
-    </div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-    <div class="product same-height">
-        <div class="flip-container">
-            <div class="flipper">
-                <div class="front">
-                    <a href="detail.html">
-                        <img src="img/product2.jpg" alt="" class="img-responsive">
-                    </a>
-                </div>
-                <div class="back">
-                    <a href="detail.html">
-                        <img src="img/product2_2.jpg" alt="" class="img-responsive">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <a href="detail.html" class="invisible">
-            <img src="img/product2.jpg" alt="" class="img-responsive">
-        </a>
-        <div class="text">
-            <h3>Fur coat</h3>
-            <p class="price">$143</p>
-        </div>
-    </div>
-    <!-- /.product -->
-</div>
-
-<div class="col-md-3 col-sm-6">
-    <div class="product same-height">
-        <div class="flip-container">
-            <div class="flipper">
-                <div class="front">
-                    <a href="detail.html">
-                        <img src="img/product1.jpg" alt="" class="img-responsive">
-                    </a>
-                </div>
-                <div class="back">
-                    <a href="detail.html">
-                        <img src="img/product1_2.jpg" alt="" class="img-responsive">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <a href="detail.html" class="invisible">
-            <img src="img/product1.jpg" alt="" class="img-responsive">
-        </a>
-        <div class="text">
-            <h3>Fur coat</h3>
-            <p class="price">$143</p>
-        </div>
-    </div>
-    <!-- /.product -->
-</div>
-
-
-<div class="col-md-3 col-sm-6">
-    <div class="product same-height">
-        <div class="flip-container">
-            <div class="flipper">
-                <div class="front">
-                    <a href="detail.html">
-                        <img src="img/product3.jpg" alt="" class="img-responsive">
-                    </a>
-                </div>
-                <div class="back">
-                    <a href="detail.html">
-                        <img src="img/product3_2.jpg" alt="" class="img-responsive">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <a href="detail.html" class="invisible">
-            <img src="img/product3.jpg" alt="" class="img-responsive">
-        </a>
-        <div class="text">
-            <h3>Fur coat</h3>
-            <p class="price">$143</p>
-
-        </div>
-    </div>
-    <!-- /.product -->
-</div>
-
-</div>
-
-
 </div>
 <div class="col-md-3">
                 <div class="box" id="order-summary">
                     <div class="box-header">
                         <h3>Order summary</h3>
                     </div>
-                    <p class="text-muted">Shipping and additional costs are calculated based on the values you have entered.</p>
+                    <p class="text-muted">Shipping costs are calculated based on the values you have entered.</p>
 
                     <div class="table-responsive">
                         <table class="table">
                             <tbody>
-                                <tr>
-                                    <td>Order subtotal</td>
-                                    <th>{{ $totalPrice }} KM</th>
-                                </tr>
-                                <tr>
-                                    <td>Shipping and handling</td>
-                                    <th>10.00 KM</th>
-                                </tr>
-                                <tr>
-                                    <td>Tax</td>
-                                    <th>0.00 KM</th>
-                                </tr>
+                               
                                 <tr class="total">
-                                    <td>Total</td>
-                                    <th>{{ $totalPrice + 10 }} KM</th>
+                                    <td>Total:</td>
+                                    <th>{{ $totalPrice }} KM</th>
                                 </tr>
                             </tbody>
                         </table>

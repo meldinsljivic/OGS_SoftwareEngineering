@@ -18,7 +18,7 @@
     <meta name="keywords" content="">
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
-
+    
     <!-- styles -->
 <link href="{{ URL::to('css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ URL::to('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -51,7 +51,7 @@
       
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
-    <script src="{{ URL::to('js/jquery-1.11.0.min.js') }}"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ URL::to('js/bootstrap.min.js') }}"></script>
     <script src="{{ URL::to('js/jquery.cookie.js') }}"></script>
     <script src="{{ URL::to('js/waypoints.min.js') }}"></script>
@@ -59,7 +59,7 @@
     <script src="{{ URL::to('js/bootstrap-hover-dropdown.js') }}"></script>
     <script src="{{ URL::to('js/owl.carousel.min.js') }}"></script>
     <script src="{{ URL::to('js/front.js') }}"></script>
-
+    <script src="https://js.stripe.com/v3/"></script>
 @yield('scripts')
 
 </body>

@@ -2,6 +2,16 @@
 @section('title') SE Project @endsection
 @section('content')
 <div id="content">
+@if(Session::has('success'))
+<div class="row">
+    
+    <div class="col-ms-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+        <div id="charge-message" class="alert alert-success">
+            {{ Session::get('success')}}
+        </div>
+    </div>
+</div>
+@endif
     @foreach($products->chunk(4) as $productChunk)
     <div class="row products">
     @foreach($productChunk as $product)
