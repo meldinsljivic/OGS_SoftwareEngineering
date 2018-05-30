@@ -20,6 +20,9 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
     
     <!-- styles -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
 <link href="{{ URL::to('css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ URL::to('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ URL::to('css/animate.min.css') }}" rel="stylesheet">

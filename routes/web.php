@@ -118,3 +118,20 @@ Route::get('/cart', [
     'as' => 'product.cart'
 ]);
 
+Route::get('/reduce/{id}', [
+    'uses'=> 'ProductController@getReduceByOne',
+    'as' => 'product.reduceByOne'
+]);
+
+Route::get('/increase/{id}', [
+    'uses'=> 'ProductController@getIncreaseByOne',
+    'as' => 'product.increaseByOne'
+]);
+
+Route::get('/remove/{id}', [
+    'uses'=> 'ProductController@getRemoveItem',
+    'as' => 'product.removeItem'
+]);
+
+
+

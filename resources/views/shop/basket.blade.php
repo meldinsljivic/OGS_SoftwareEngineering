@@ -37,12 +37,14 @@
                 <td><a href="#">{{ $product['item']['title'] }}</a>
                     </td>
                     <td>
-                        <input type="number" value="{{ $product['quantity'] }}" class="form-control">
+                        {{ $product['quantity'] }}
+                        <a href="{{ route('product.increaseByOne', ['id' => $product['item']['id']])}}">   <i class="fas fa-arrow-up"></i></a>
+                    <a href="{{ route('product.reduceByOne', ['id' => $product['item']['id']]) }}">   <i class="fas fa-arrow-down"></i></a>
                     </td>
                     <td>{{ $product['price'] / $product['quantity']}} KM</td>
                     <td>$0.00</td>
                     <td>{{ $product['price']}} KM</td>
-                    <td><a href="#"><i class="fa fa-trash-o"></i></a>
+                    <td><a href="{{ route('product.removeItem', ['id' => $product['item']['id']]) }}"><i class="fa fa-trash-o"></i></a>
                     </td>
                 </tr>
                 @endforeach 
@@ -63,7 +65,7 @@
             <a href="/" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
         </div>
         <div class="pull-right">
-            <button class="btn btn-default"><i class="fa fa-refresh"></i> Update basket</button>
+            
         <a href="{{ route('checkout')}}" type="button" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i>
             </a>
         </div>

@@ -29,6 +29,32 @@ class ProductController extends Controller
         return redirect()->route('product.index');
     }
 
+    public function getReduceByOne($id){
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->reduceByOne($id);
+        
+        Session::put('cart', $cart);
+        return redirect()->route('product.cart');
+    }
+
+    public function getRemoveItem($id){
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+        Session::put('cart', $cart);
+        return redirect()->route('product.cart');
+    }
+
+    public function getIncreaseByOne($id){
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->increaseByOne($id);
+
+        Session::put('cart', $cart);
+        return redirect()->route('product.cart');
+    }
+
     public function getCart(){
         if(!Session::has('cart')){
             return view('shop.basket');
