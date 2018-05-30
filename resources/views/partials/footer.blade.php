@@ -139,7 +139,7 @@
  <div id="copyright">
         <div class="container">
             <div class="col-md-6">
-                <p class="pull-left">© 2018 WebProgramingProject - Developed by Meldin Šljivić</p>
+                <p class="pull-left">© 2018 SoftwareEngineeringProject - Developed by Meldin Šljivić</p>
 
             </div>
             <div class="col-md-6">

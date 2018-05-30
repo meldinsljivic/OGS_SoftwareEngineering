@@ -29,6 +29,8 @@ class ProductController extends Controller
         return redirect()->route('product.index');
     }
 
+  
+
     public function getReduceByOne($id){
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
