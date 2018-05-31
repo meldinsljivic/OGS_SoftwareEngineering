@@ -17,7 +17,12 @@ class ProductController extends Controller
         $products = Product::all();
         return view('shop.index', ['products' => $products]);
     }
+    public function getCategory(){
 
+        $products = Product::all();
+        return view('shop.category', ['products' => $products]);
+    }
+    
     public function getAddToCart(Request $request, $id){
         $product = Product::find($id);
         $oldCart = Session::has('cart') ? Session::get('cart') : null;

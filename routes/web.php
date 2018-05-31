@@ -16,6 +16,12 @@ Route::get('/', [
     'as' => 'product.index'
 ]
 );
+Route::get('/category', [
+    'uses' => 'CategoriesController@index',
+    'as' => 'category.category'
+]
+);
+Route::resource('category','CategoriesController');
 Route::get('/error', function () {
     return view('shop.404');
 });
@@ -28,9 +34,7 @@ Route::get('/blog', function () {
     return view('shop.blog');
 });
 
-Route::get('/category', function () {
-    return view('shop.category');
-});
+
 
 Route::get('/contact', function () {
     return view('shop.contact');
