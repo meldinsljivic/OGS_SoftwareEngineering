@@ -21,7 +21,6 @@ class CategoriesController extends Controller
     {   
         $products = Product::all();
         $categories=Category::all();
-        Product::where('id','=',$category->id)->count();
         return view('shop.category',['categories' => $categories,'products' => $products]);
 
 
