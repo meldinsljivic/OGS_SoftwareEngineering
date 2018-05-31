@@ -37,7 +37,7 @@
                             <li>
                                 <div class="yamm-content">
                                     <div class="row">
-                                            @foreach($categories->chunk(4) as $categoryChunk)
+                                          {{--   @foreach($categories->chunk(4) as $categoryChunk)
                                         <div class="col-sm-3">
                                             
                                             <ul>
@@ -48,7 +48,7 @@
                                                     
                                             </ul>
                                         </div>
-                                        @endforeach
+                                        @endforeach --}}
                                         
                                         
                                     </div>
