@@ -21,6 +21,22 @@ Route::get('/category', [
     'as' => 'category.category'
 ]
 );
+
+Route::get('/post/{slug}', [
+    'uses' => 'PostsController@getPostSingle',
+    'as' => 'shop.posts'
+]
+);
+Route::get('/blog', [
+    'uses' => 'PostsController@getPosts',
+    'as' => 'shop.blog'
+]
+);
+Route::get('/detail/{id}', [
+    'uses' => 'ProductController@getProductSingle',
+    'as' => 'shop.detail'
+]
+);
 Route::resource('category','CategoriesController');
 Route::get('/error', function () {
     return view('shop.404');
@@ -30,27 +46,18 @@ Route::get('/basket', function () {
     return view('shop.basket');
 });
 
-Route::get('/blog', function () {
-    return view('shop.blog');
-});
-
 
 
 Route::get('/contact', function () {
     return view('shop.contact');
 });
 
-Route::get('/detail', function () {
-    return view('shop.detail');
-});
+
 
 Route::get('/faq', function () {
     return view('shop.faq');
 });
 
-Route::get('/post', function () {
-    return view('shop.post');
-});
 
 
 Route::get('/order', function () {

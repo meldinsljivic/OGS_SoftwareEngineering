@@ -37,26 +37,19 @@
                             <li>
                                 <div class="yamm-content">
                                     <div class="row">
+                                            @foreach($categories->chunk(4) as $categoryChunk)
                                         <div class="col-sm-3">
                                             
                                             <ul>
-                                                <li><a href="/category">Action</a>
-                                                </li>
-                                                <li><a href="category.html">Sports</a>
-                                                </li>
-                                                <li><a href="category.html">Multyplayer</a>
-                                                </li>
-                                                <li><a href="category.html">FPS</a>
-                                                </li>
+                                                    
+                                                    @foreach($categoryChunk as $category)
+                                                        <li><a href="{{ route('category.show', $category->id) }}">{{$category->name}}</a></li>
+                                                    @endforeach
+                                                    
                                             </ul>
                                         </div>
-                                        <div class="col-sm-3">
-                                            
-                                            <ul>
-                                                <li><a href="category.html">Strategy</a>
-                                                </li>                                                
-                                            </ul>
-                                        </div>
+                                        @endforeach
+                                        
                                         
                                     </div>
                                 </div>
@@ -111,7 +104,7 @@
 
                 <li><a href="/register">Register</a></li>
                     @endif
-                    
+                    <li><a href="/blog">News</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
 

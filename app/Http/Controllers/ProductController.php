@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Cart; 
+use App\Category;
 use App\Product;
 use App\Order;
 use Illuminate\Http\Request;
@@ -13,14 +14,19 @@ use Stripe\Customer;
 class ProductController extends Controller
 {
     public function getIndex(){
-
+        $categories=Category::all();
         $products = Product::all();
-        return view('shop.index', ['products' => $products]);
+        return view('shop.index', ['products' => $products, 'categories' => $categories]);
     }
     public function getCategory(){
 
         $products = Product::all();
         return view('shop.category', ['products' => $products]);
+    }
+    public function getProductSingle($id){
+        $product = Product::whereId($id)->first();
+        $categories=Category::all();
+        return view('shop.detail', ['product' => $product, 'categories' => $categories]);
     }
     
     public function getAddToCart(Request $request, $id){
