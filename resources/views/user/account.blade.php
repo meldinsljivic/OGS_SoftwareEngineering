@@ -22,13 +22,13 @@ _________________________________________________________ -->
 
                         <ul class="nav nav-pills nav-stacked">
                             <li >
-                                <a href="#!orders"><i class="fa fa-list"></i> My orders</a>
+                                <a href="/orders"><i class="fa fa-list"></i> My orders</a>
                             </li>
                             <li>
-                                <a href="#!wishlist"><i class="fa fa-heart"></i> My wishlist</a>
+                                <a href="/wishlist"><i class="fa fa-heart"></i> My wishlist</a>
                             </li>
                             <li class="active">
-                                <a href="#!account"><i class="fa fa-user"></i> My account</a>
+                                <a href="/account"><i class="fa fa-user"></i> My account</a>
                             </li>
                             <li>
                                 <a href="{{ route('user.logout') }}"><i class="fa fa-sign-out"></i> Logout</a>

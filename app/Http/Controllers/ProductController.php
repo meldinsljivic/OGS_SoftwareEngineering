@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Wishlist;
 use App\Cart; 
 use App\Category;
 use App\Product;
@@ -28,7 +29,11 @@ class ProductController extends Controller
         $categories=Category::all();
         return view('shop.detail', ['product' => $product, 'categories' => $categories]);
     }
-    
+    public function getWishlist(){
+        $wishlists = Wishlist::all();
+        $products = Product::all();
+        return view('user.wishlist', ['products' => $products, 'wishlists' => $wishlists]);
+    }
     public function getAddToCart(Request $request, $id){
         $product = Product::find($id);
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
@@ -50,7 +55,28 @@ class ProductController extends Controller
         Session::put('cart', $cart);
         return redirect()->route('product.cart');
     }
+    public function postWishlist(Request $request){
+        $this->validate($request, [
+            'id_product' => 'required',
+            'id_user' => 'required'
+            
+        ]);
 
+        $wishlist = new Wishlist([
+            'id_product' => $request->input('id_product'),
+            'id_user' => $request->input('id_user')
+            
+        ]);
+        $wishlist->save();
+
+        if(Session::has('oldUrl')){
+            $oldUrl = Session::get('oldUrl');
+            Session::forget('oldUrl');
+            return redirect()->to($oldUrl);
+        }
+
+        return redirect()->route('product.index');
+    }
     public function getRemoveItem($id){
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);

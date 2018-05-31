@@ -68,9 +68,7 @@ Route::get('/orders', function () {
     return view('user.orders');
 });
 
-Route::get('/wishlist', function () {
-    return view('user.wishlist');
-});
+
 
 Route::group(['middleware' => 'guest'], function(){
     Route::get('/register', [
@@ -99,7 +97,15 @@ Route::group(['middleware' => 'auth'], function(){
         'uses' => 'userController@getProfile',
         'as' => 'user.account'
     ]);
-    
+    Route::post('/wishlist',[
+        'uses' => 'ProductController@postWishlist',
+        'as' => 'shop.wishlist'        
+    ]);
+    Route::get('/wishlist', [
+        'uses' => 'ProductController@getWishlist',
+        'as' => 'shop.wishlist'
+    ]
+    );
     Route::get('/logout', [
         'uses' => 'userController@getLogout',
         'as' => 'user.logout'

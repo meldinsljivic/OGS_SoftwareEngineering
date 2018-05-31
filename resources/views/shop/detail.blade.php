@@ -71,8 +71,13 @@ _________________________________________________________ -->
                             <p class="price">{{$product->price}} KM</p>
 
                             <p class="text-center buttons">
-                                <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
-                                <a href="basket.html" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
+                                <form method="POST" action="{{ route('shop.wishlist') }}" name="wishlist_form" >
+                                        <input type="hidden"  class="form-control" name="id_product" value="{{$product->id}}" id="id_product">
+                                <input type="hidden"  class="form-control" name="id_user" value="{{Auth::id()}}"  id="id_user">
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</button>
+                                        {{ csrf_field() }}
+                                </form> 
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</button>
                             </p>
 
 
