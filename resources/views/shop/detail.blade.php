@@ -47,7 +47,7 @@ _________________________________________________________ -->
                 <div class="row" id="productMain">
                     <div class="col-sm-6">
                         <div id="mainImage">
-                            <img src="{{$product->imagePath}}" alt="" class="img-responsive">
+                            <img src="{{$product->image1}}" alt="" class="img-responsive">
                         </div>
 
                         <div class="ribbon sale">
@@ -85,18 +85,18 @@ _________________________________________________________ -->
 
                         <div class="row" id="thumbs">
                             <div class="col-xs-4">
-                                <a href="{{$product->imagePath}}" class="thumb">
-                                    <img src="{{$product->imagePath}}" alt="" class="img-responsive">
+                                <a href="{{$product->image1}}" class="thumb">
+                                    <img src="{{$product->image1}}" alt="" class="img-responsive">
                                 </a>
                             </div>
                             <div class="col-xs-4">
-                                <a href="{{$product->imagePath}}" class="thumb">
-                                    <img src="{{$product->imagePath}}" alt="" class="img-responsive">
+                                <a href="{{$product->image2}}" class="thumb">
+                                    <img src="{{$product->image2}}" alt="" class="img-responsive">
                                 </a>
                             </div>
                             <div class="col-xs-4">
-                                <a href="{{$product->imagePath}}" class="thumb">
-                                    <img src="{{$product->imagePath}}" alt="" class="img-responsive">
+                                <a href="{{$product->image3}}" class="thumb">
+                                    <img src="{{$product->image3}}" alt="" class="img-responsive">
                                 </a>
                             </div>
                         </div>

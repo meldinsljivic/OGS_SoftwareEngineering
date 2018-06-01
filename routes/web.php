@@ -142,6 +142,16 @@ Route::group(['middleware' => 'auth'], function(){
         'uses' => 'ProductController@postAddProduct',
         'as' => 'shop.addProduct'        
     ]);
+    Route::get('/listProducts', [
+        'uses' => 'ProductController@getListProducts',
+        'as' => 'shop.listProduct'
+    ]
+    );
+    Route::get('/deleteListProduct/{id}', [
+        'uses' => 'ProductController@getDeleteListProduct',
+        'as' => 'shop.deleteListProduct'
+    ]
+    );
 });
 
 Route::get('/add-to-cart/{id}', [
@@ -168,6 +178,17 @@ Route::get('/remove/{id}', [
     'uses'=> 'ProductController@getRemoveItem',
     'as' => 'product.removeItem'
 ]);
+
+Route::get('/listPosts', [
+    'uses' => 'PostsController@getListPosts',
+    'as' => 'shop.listPosts'
+]
+);
+Route::get('/deleteListPost/{id}', [
+    'uses' => 'PostsController@getDeleteListPosts',
+    'as' => 'shop.deleteListPost'
+]
+);
 
 
 

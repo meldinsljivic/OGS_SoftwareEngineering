@@ -20,6 +20,19 @@ class ProductController extends Controller
         $products = Product::orderBy('id', 'DESC')->get();
         return view('shop.index', ['products' => $products, 'categories' => $categories]);
     }
+    public function getListProducts(){
+        
+        $products = Product::orderBy('id', 'DESC')->get();
+        return view('shop.listProducts', ['products' => $products]);
+    }
+    public function getDeleteListProduct($id)
+    {
+
+        Product::where('id', $id)->delete();
+
+        return redirect()->route('shop.listProduct');
+
+    }
     public function getAddPost(){
         
         return view('shop.addPost');

@@ -16,7 +16,7 @@ class PostsController extends Controller
 {
     public function getPosts(){
 
-        $posts = Posts::all();
+        $posts = Posts::orderBy('id', 'DESC')->get();
         return view('shop.blog', ['posts' => $posts]);
     }
   
@@ -24,6 +24,18 @@ class PostsController extends Controller
         $post = Posts::whereSlug($slug)->first();
         return view('shop.post', ['post' => $post]);
     }
-    
+    public function getListPosts(){
+        
+        $posts = Posts::orderBy('id', 'DESC')->get();
+        return view('shop.listPosts', ['posts' => $posts]);
+    }
+    public function getDeleteListPosts($id)
+    {
+
+        Posts::where('id', $id)->delete();
+
+        return redirect()->route('shop.listPosts');
+
+    }
     
 }

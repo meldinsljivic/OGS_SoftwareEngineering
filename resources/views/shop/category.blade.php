@@ -82,18 +82,18 @@ _________________________________________________________ -->
                                 <div class="flipper">
                                     <div class="front">
                                         <a href="/detail/{{$product->id}}">
-                                            <img src="{{ $product -> imagePath }}" alt="" class="img-responsive">
+                                            <img src="{{ $product -> image1 }}" alt="" class="img-responsive">
                                         </a>
                                     </div>
                                     <div class="back">
                                         <a href="/detail/{{$product->id}}">
-                                            <img src="{{ $product -> imagePath }}" alt="" class="img-responsive">
+                                            <img src="{{ $product -> image1 }}" alt="" class="img-responsive">
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <a href="/detail/{{$product->id}}" class="invisible">
-                                <img src="{{ $product -> imagePath }}" alt="" class="img-responsive">
+                                <img src="{{ $product -> image1 }}" alt="" class="img-responsive">
                             </a>
                             <div class="text">
                                 <h3><a href="/detail/{{$product->id}}">{{ $product -> title }}</a></h3>
