@@ -54,7 +54,7 @@
                             <div class="modal-body">
                                 <form action="{{ route('shop.login') }}" method="post">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="username" name="username" placeholder="email">
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="username">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control" id="password" name="password" placeholder="password">

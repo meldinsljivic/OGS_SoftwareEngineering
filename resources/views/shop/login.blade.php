@@ -19,7 +19,7 @@
 
                     <form action="{{ route('shop.login') }}" method="POST" name="login_form">
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">Username</label>
                             <input type="text" class="form-control" name="username" id="username">
                         </div>
                         <div class="form-group">
