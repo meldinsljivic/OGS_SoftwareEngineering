@@ -22,7 +22,7 @@ _________________________________________________________ -->
                         <ul class="nav nav-pills nav-stacked category-menu">
                                 @foreach($categories as $category)
                                 <li>
-                                <a href="/category/{{ route('category.show', $category->id) }}">{{$category->name}}  <span class="badge pull-right">{{$category->count()}}</span></a>
+                                <a href="{{ route('category.show', $category->id) }}">{{$category->name}}  <span class="badge pull-right">{{$category->count()}}</span></a>
                                 </li>   
                                 @endforeach
                           

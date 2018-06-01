@@ -123,6 +123,25 @@ Route::group(['middleware' => 'auth'], function(){
         'uses' => 'userController@getOrders',
         'as' => 'user.orders'
     ]);
+    Route::get('/addPost', [
+        'uses' => 'ProductController@getAddPost',
+        'as' => 'shop.addPost'
+    ]
+    );
+    Route::post('/addPost',[
+        'uses' => 'ProductController@postAddPost',
+        'as' => 'shop.addPost'        
+    ]);
+
+    Route::get('/addProduct', [
+        'uses' => 'ProductController@getAddProduct',
+        'as' => 'shop.addProduct'
+    ]
+    );
+    Route::post('/addProduct',[
+        'uses' => 'ProductController@postAddProduct',
+        'as' => 'shop.addProduct'        
+    ]);
 });
 
 Route::get('/add-to-cart/{id}', [

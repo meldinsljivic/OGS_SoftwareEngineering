@@ -25,4 +25,5 @@ class PostsController extends Controller
         return view('shop.post', ['post' => $post]);
     }
     
+    
 }

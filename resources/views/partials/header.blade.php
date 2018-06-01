@@ -31,31 +31,9 @@
                 <ul class="nav navbar-nav navbar-left">
                     <li class="active"><a href="/">Home</a>
                     </li>
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Categories <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
-                                          {{--   @foreach($categories->chunk(4) as $categoryChunk)
-                                        <div class="col-sm-3">
-                                            
-                                            <ul>
-                                                    
-                                                    @foreach($categoryChunk as $category)
-                                                        <li><a href="{{ route('category.show', $category->id) }}">{{$category->name}}</a></li>
-                                                    @endforeach
-                                                    
-                                            </ul>
-                                        </div>
-                                        @endforeach --}}
-                                        
-                                        
-                                    </div>
-                                </div>
-                                <!-- /.yamm-content -->
-                            </li>
-                        </ul>
+                    <li >
+                        <a href="/category" >Categories</b></a>
+                    
                     </li>
 
                     @if(Auth::check())

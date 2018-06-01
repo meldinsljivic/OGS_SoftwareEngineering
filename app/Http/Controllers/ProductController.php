@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Posts;
 use App\Wishlist;
 use App\Cart; 
 use App\Category;
@@ -16,12 +17,82 @@ class ProductController extends Controller
 {
     public function getIndex(){
         $categories=Category::all();
-        $products = Product::all();
+        $products = Product::orderBy('id', 'DESC')->get();
         return view('shop.index', ['products' => $products, 'categories' => $categories]);
+    }
+    public function getAddPost(){
+        
+        return view('shop.addPost');
+    }
+    public function getAddProduct(){
+        $categories=Category::all();
+        return view('shop.addProduct', ['categories' => $categories]);
+    }
+    public function postAddProduct(Request $request){
+        $this->validate($request, [
+            'title' => 'required',
+            'price' => 'required',
+            'youtube' => 'required',
+            'description' => 'required',
+            'image1' => 'required',
+            'image2' => 'required',
+            'image3' => 'required',
+            'category_id' => 'required'
+            
+            
+        ]);
+
+        $product = new Product([
+            'title' => $request->input('title'),
+            'price' => $request->input('price'),
+            'youtube' => $request->input('youtube'),
+            'description' => $request->input('description'),
+            'image1' => $request->input('image1'),
+            'image2' => $request->input('image2'),
+            'image3' => $request->input('image3'),
+            'category_id' => $request->input('category_id')
+            
+            
+        ]);
+        $product->save();
+
+        if(Session::has('oldUrl')){
+            $oldUrl = Session::get('oldUrl');
+            Session::forget('oldUrl');
+            return redirect()->to($oldUrl);
+        }
+
+        return redirect()->route('product.index');
+    }
+    public function postAddPost(Request $request){
+        $this->validate($request, [
+            'title' => 'required',
+            'slug' => 'required',
+            'description' => 'required',
+            'image' => 'required'
+            
+        ]);
+
+        $post = new Posts([
+            'title' => $request->input('title'),
+            'slug' => $request->input('slug'),
+            'description' => $request->input('description'),
+            'image' => $request->input('image')
+            
+        ]);
+        $post->save();
+
+        if(Session::has('oldUrl')){
+            $oldUrl = Session::get('oldUrl');
+            Session::forget('oldUrl');
+            return redirect()->to($oldUrl);
+        }
+
+        return redirect()->route('shop.blog');
     }
     public function getCategory(){
 
-        $products = Product::all();
+        $products = Product::orderBy('id', 'DESC')->get();
         return view('shop.category', ['products' => $products]);
     }
     public function getProductSingle($id){
@@ -30,7 +101,7 @@ class ProductController extends Controller
         return view('shop.detail', ['product' => $product, 'categories' => $categories]);
     }
     public function getWishlist(){
-        $wishlists = Wishlist::all();
+        $wishlists = Wishlist::orderBy('id', 'DESC')->get();
         $products = Product::all();
         return view('user.wishlist', ['products' => $products, 'wishlists' => $wishlists]);
     }
@@ -75,7 +146,7 @@ class ProductController extends Controller
             return redirect()->to($oldUrl);
         }
 
-        return redirect()->route('product.index');
+        return redirect()->route('shop.detail', $request->input('id_product'));
     }
     public function getRemoveItem($id){
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
