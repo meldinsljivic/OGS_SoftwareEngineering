@@ -74,10 +74,10 @@ _________________________________________________________ -->
                                 <form method="POST" action="{{ route('shop.wishlist') }}" name="wishlist_form" >
                                         <input type="hidden"  class="form-control" name="id_product" value="{{$product->id}}" id="id_product">
                                 <input type="hidden"  class="form-control" name="id_user" value="{{Auth::id()}}"  id="id_user">
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</button>
+                                        <button type="submit" style="float:right;" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</button>
                                         {{ csrf_field() }}
                                 </form> 
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</button>
+                                <a href="{{ route('product.addToCart', ['id' => $product->id])}}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                             </p>
 
 
@@ -108,6 +108,9 @@ _________________________________________________________ -->
                 <div class="box" id="details">
                     <p>
                         <h3>Product details</h3>
+                        <iframe width="100%" height="450"
+src="{{$product->youtube}}">
+</iframe><br><br>
                         <p>{{$product->description}}</p>
                         
                         <blockquote>
@@ -127,7 +130,7 @@ _________________________________________________________ -->
                         </div>
                 </div>
 
-                <div class="row same-height-row">
+                <di{{-- v class="row same-height-row">
                     <div class="col-md-3 col-sm-6">
                         <div class="box same-height">
                             <h3>You may also like these products</h3>
@@ -217,7 +220,7 @@ _________________________________________________________ -->
                         <!-- /.product -->
                     </div>
 
-                </div>
+                </div> --}}
 
                 
 

@@ -7,13 +7,13 @@
                     <h4>Pages</h4>
 
                     <ul>
-                        <li><a href="text.html">About us</a>
+                        <li><a href="/account">Account</a>
                         </li>
-                        <li><a href="text.html">Terms and conditions</a>
+                        <li><a href="/wishlist">Wishlist</a>
                         </li>
-                        <li><a href="faq.html">FAQ</a>
+                        <li><a href="/faq">FAQ</a>
                         </li>
-                        <li><a href="contact.html">Contact us</a>
+                        <li><a href="/contact">Contact us</a>
                         </li>
                     </ul>
 
@@ -22,9 +22,9 @@
                     <h4>User section</h4>
 
                     <ul>
-                        <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                        <li><a href="/login">Login</a>
                         </li>
-                        <li><a href="register.html">Regiter</a>
+                        <li><a href="/register">Register</a>
                         </li>
                     </ul>
 
@@ -37,27 +37,25 @@
 
                     <h4>Top categories</h4>
 
-                    <h5>Men</h5>
-
+                    
                     <ul>
-                        <li><a href="category.html">T-shirts</a>
+                        <li><a href="category/1">Steam</a>
                         </li>
-                        <li><a href="category.html">Shirts</a>
+                        <li><a href="category/2">U-Play</a>
                         </li>
-                        <li><a href="category.html">Accessories</a>
+                        <li><a href="category/3">Action</a>
                         </li>
                     </ul>
 
-                    <h5>Ladies</h5>
+                    
                     <ul>
-                        <li><a href="category.html">T-shirts</a>
+                        <li><a href="category.html">Strategy</a>
                         </li>
-                        <li><a href="category.html">Skirts</a>
+                        <li><a href="category.html">Sport</a>
                         </li>
-                        <li><a href="category.html">Pants</a>
+                        <li><a href="category.html">FPS</a>
                         </li>
-                        <li><a href="category.html">Accessories</a>
-                        </li>
+                        
                     </ul>
 
                     <hr class="hidden-md hidden-lg">
@@ -78,7 +76,7 @@
                         <strong>Great Britain</strong>
                     </p>
 
-                    <a href="contact.html">Go to contact page</a>
+                    <a href="/contact">Go to contact page</a>
 
                     <hr class="hidden-md hidden-lg">
 

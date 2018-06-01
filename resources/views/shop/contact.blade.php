@@ -20,13 +20,13 @@ _________________________________________________________ -->
                     <div class="panel-body">
                         <ul class="nav nav-pills nav-stacked">
                             <li>
-                                <a href="text.html">Text page</a>
+                                <a href="/blog">News</a>
                             </li>
                             <li>
-                                <a href="contact.html">Contact page</a>
+                                <a href="/contact">Contact</a>
                             </li>
                             <li>
-                                <a href="faq.html">FAQ</a>
+                                <a href="/faq">FAQ</a>
                             </li>
 
                         </ul>
@@ -37,11 +37,7 @@ _________________________________________________________ -->
                 <!-- *** PAGES MENU END *** -->
 
 
-                <div class="banner">
-                    <a href="#">
-                        <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
-                    </a>
-                </div>
+                
             </div>
 
             <div class="col-md-9">
@@ -80,7 +76,7 @@ _________________________________________________________ -->
                             <ul>
                                 <li><strong><a href="mailto:">info@fakeemail.com</a></strong>
                                 </li>
-                                <li><strong><a href="#">Ticketio</a></strong> - our ticketing support platform</li>
+                                
                             </ul>
                         </div>
                         <!-- /.col-sm-4 -->

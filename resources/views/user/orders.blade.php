@@ -46,8 +46,7 @@ _________________________________________________________ -->
                     <h1>My orders</h1>
 
                     <p class="lead">Your orders on one place.</p>
-                    <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
-
+                    
                     <hr>
 
                     <div class="table-responsive">

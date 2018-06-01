@@ -31,7 +31,7 @@
                 <tr>
                     <td>
                         <a href="#">
-                            <img src="{{ $product['item']['imagePath'] }}" alt="{{ $product['item']['title'] }}">
+                            <img src="{{ $product['item']['image1'] }}" alt="{{ $product['item']['title'] }}">
                         </a>
                     </td>
                 <td><a href="#">{{ $product['item']['title'] }}</a>
@@ -42,7 +42,7 @@
                     <a href="{{ route('product.reduceByOne', ['id' => $product['item']['id']]) }}">   <i class="fas fa-arrow-down"></i></a>
                     </td>
                     <td>{{ $product['price'] / $product['quantity']}} KM</td>
-                    <td>$0.00</td>
+                    <td>0.00 KM</td>
                     <td>{{ $product['price']}} KM</td>
                     <td><a href="{{ route('product.removeItem', ['id' => $product['item']['id']]) }}"><i class="fa fa-trash-o"></i></a>
                     </td>

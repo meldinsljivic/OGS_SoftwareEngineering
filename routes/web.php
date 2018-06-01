@@ -106,10 +106,12 @@ Route::group(['middleware' => 'auth'], function(){
         'as' => 'shop.wishlist'
     ]
     );
+   
     Route::get('/logout', [
         'uses' => 'userController@getLogout',
         'as' => 'user.logout'
     ]);
+    
     Route::get('/checkout', [
         'uses'=> 'ProductController@getCheckout',
         'as' => 'checkout'
@@ -125,31 +127,43 @@ Route::group(['middleware' => 'auth'], function(){
     ]);
     Route::get('/addPost', [
         'uses' => 'ProductController@getAddPost',
-        'as' => 'shop.addPost'
+        'as' => 'shop.addPost',
+        'middleware' => 'roles',
+        'roles' => ['Admin']
     ]
     );
     Route::post('/addPost',[
         'uses' => 'ProductController@postAddPost',
-        'as' => 'shop.addPost'        
+        'as' => 'shop.addPost',
+        'middleware' => 'roles',
+        'roles' => ['Admin']      
     ]);
 
     Route::get('/addProduct', [
         'uses' => 'ProductController@getAddProduct',
-        'as' => 'shop.addProduct'
+        'as' => 'shop.addProduct',
+        'middleware' => 'roles',
+        'roles' => ['Admin']
     ]
     );
     Route::post('/addProduct',[
         'uses' => 'ProductController@postAddProduct',
-        'as' => 'shop.addProduct'        
+        'as' => 'shop.addProduct',
+        'middleware' => 'roles',
+        'roles' => ['Admin']       
     ]);
     Route::get('/listProducts', [
         'uses' => 'ProductController@getListProducts',
-        'as' => 'shop.listProduct'
+        'as' => 'shop.listProduct',
+        'middleware' => 'roles',
+        'roles' => ['Admin']
     ]
     );
     Route::get('/deleteListProduct/{id}', [
         'uses' => 'ProductController@getDeleteListProduct',
-        'as' => 'shop.deleteListProduct'
+        'as' => 'shop.deleteListProduct',
+        'middleware' => 'roles',
+        'roles' => ['Admin']
     ]
     );
 });

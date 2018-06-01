@@ -11,14 +11,14 @@
                     <!-- *** LEFT COLUMN ***
                  _________________________________________________________ -->
     
-                    <div class="col-sm-9" id="blog-listing">
+                    <div class="col-sm-12" id="blog-listing">
     @foreach($posts as $post)
                         <div class="post">
                         <h2><a href="/post/{{$post->slug}}">{{$post->title}}</a></h2>
                            
                             <hr>
                             <p class="date-comments">
-                                <a href="post.html"><i class="fa fa-calendar-o"></i> June 20, 2013</a>
+                                <a href="post.html"><i class="fa fa-calendar-o"></i> {{date('d-m-Y', strtotime($post->created_at))}}</a>
                                 <a href="post.html"><i class="fa fa-comment-o"></i> 8 Comments</a>
                             </p>
                             <div class="image">
@@ -26,7 +26,8 @@
                                     <img src="{{$post->image}}" class="img-responsive" alt="Example blog post alt">
                                 </a>
                             </div>
-                            <p class="intro">{{$post->description}}</p>
+                            <br><br>
+                            <p class="intro">{{str_limit($post->description, 1000)}}</p>
                             <p class="read-more"><a href="/post/{{$post->slug}}" class="btn btn-primary">Continue reading</a>
                             </p>
                         </div>
@@ -34,12 +35,12 @@
     
                     
     
-                        <ul class="pager">
+                       {{--  <ul class="pager">
                             <li class="previous"><a href="#">&larr; Older</a>
                             </li>
                             <li class="next disabled"><a href="#">Newer &rarr;</a>
                             </li>
-                        </ul>
+                        </ul> --}}
     
     
     
@@ -49,7 +50,7 @@
                     <!-- *** LEFT COLUMN END *** -->
     
     
-                    <div class="col-md-3">
+                  {{--   <div class="col-md-3">
                         <!-- *** BLOG MENU ***
      _________________________________________________________ -->
                         <div class="panel panel-default sidebar-menu">
@@ -82,7 +83,7 @@
                         <!-- *** BLOG MENU END *** -->
     
                        
-                    </div>
+                    </div> --}}
     
     
                 </div>

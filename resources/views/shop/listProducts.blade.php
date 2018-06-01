@@ -40,7 +40,7 @@
                     <td>{{ $product['price'] }} KM</td>
                     
                     
-                    <td><a href="{{route('shop.deleteListProduct', ['id' => $product->id]) }} }}"><i class="fa fa-trash-o"></i></a>
+                    <td><a href="{{route('shop.deleteListProduct', ['id' => $product->id]) }}"><i class="fa fa-trash-o"></i></a>
                     </td>
                 </tr>
                 @endforeach 

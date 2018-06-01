@@ -82,8 +82,11 @@
 
                 <li><a href="/register">Register</a></li>
                     @endif
+                    
                     <li><a href="/blog">News</a></li>
                     <li><a href="/contact">Contact</a></li>
+
+                    
                 </ul>
 
             </div>

@@ -8,13 +8,13 @@
         <div class="container">
 
 
-            <div class="col-sm-9" id="blog-post">
+            <div class="col-sm-12" id="blog-post">
 
 
                 <div class="box">
 
                     <h1>{{$post->title}}</h1>
-                    <p class="author-date">June 20, 2013</p>
+                    <p class="author-date">{{date('d-m-Y', strtotime($post->created_at))}}</p>
                     
                     <div id="post-content">
                     
@@ -25,6 +25,8 @@
                         
 
                     </div>
+                    <hr>
+                    
                     <!-- /#post-content -->
 
                     <div id="comments" data-animate="fadeInUp">
@@ -126,7 +128,7 @@
             </div>
             <!-- /#blog-post -->
 
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <!-- *** BLOG MENU ***
 _________________________________________________________ -->
                 <div class="panel panel-default sidebar-menu">
@@ -159,7 +161,7 @@ _________________________________________________________ -->
                 <!-- *** BLOG MENU END *** -->
 
                 
-            </div>
+            </div> --}}
 
 
         </div>

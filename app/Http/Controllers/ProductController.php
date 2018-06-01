@@ -33,6 +33,7 @@ class ProductController extends Controller
         return redirect()->route('shop.listProduct');
 
     }
+    
     public function getAddPost(){
         
         return view('shop.addPost');
@@ -82,6 +83,7 @@ class ProductController extends Controller
             'title' => 'required',
             'slug' => 'required',
             'description' => 'required',
+           
             'image' => 'required'
             
         ]);
@@ -90,6 +92,7 @@ class ProductController extends Controller
             'title' => $request->input('title'),
             'slug' => $request->input('slug'),
             'description' => $request->input('description'),
+           
             'image' => $request->input('image')
             
         ]);

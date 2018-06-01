@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
@@ -78,7 +78,7 @@
         <!-- /.container -->
     </div>
     <!-- /#content -->
-
+<br><br>
 
 
 @endsection

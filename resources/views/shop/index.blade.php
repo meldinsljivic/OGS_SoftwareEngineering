@@ -15,7 +15,10 @@
     @foreach($products->chunk(4) as $productChunk)
     <div class="row products">
     @foreach($productChunk as $product)
-    <div class="col-md-3 col-sm-4">
+   
+            <div class="container">
+                    <div class="product-slider">
+                        <div class="item">
             <div class="product">
                 <div class="flip-container">
                     <div class="flipper">
@@ -43,9 +46,10 @@
                     </p>
                 </div>
                 <!-- /.text -->
-            </div>
+            
             <!-- /.product -->
         </div>
+                    </div></div></div>
     @endforeach
     
     </div>

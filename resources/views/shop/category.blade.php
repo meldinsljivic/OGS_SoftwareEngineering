@@ -22,7 +22,7 @@ _________________________________________________________ -->
                         <ul class="nav nav-pills nav-stacked category-menu">
                         <li>
                             @foreach($categories as $category)
-                        <a href="{{ route('category.show', $category->id) }}">{{$category->name}}  <span class="badge pull-right">{{$category->count()}}</span></a>
+                        <a href="{{ route('category.show', $category->id) }}">{{$category->name}}  <span class="badge pull-right"></span></a>
                             @endforeach
                                   
                                 </li>
@@ -47,16 +47,14 @@ _________________________________________________________ -->
                 <div class="box info-bar">
                     <div class="row">
                         <div class="col-sm-12 col-md-4 products-showing">
-                            Showing <strong>12</strong> of <strong>25</strong> products
+                            Showing <strong>{{$products->count()}}</strong> products
                         </div>
 
                         <div class="col-sm-12 col-md-8  products-number-sort">
                             <div class="row">
                                 <form class="form-inline">
                                     <div class="col-md-6 col-sm-6">
-                                        <div class="products-number">
-                                            <strong>Show</strong>  <a href="#" class="btn btn-default btn-sm btn-primary">12</a>  <a href="#" class="btn btn-default btn-sm">24</a>  <a href="#" class="btn btn-default btn-sm">All</a> products
-                                        </div>
+                                        
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <div class="products-sort-by">
@@ -113,7 +111,7 @@ _________________________________________________________ -->
                 </div>
                 <!-- /.products -->
 
-                <div class="pages">
+                {{-- <div class="pages">
 
                     <p class="loadMore">
                         <a href="#" class="btn btn-primary btn-lg"><i class="fa fa-chevron-down"></i> Load more</a>
@@ -135,7 +133,7 @@ _________________________________________________________ -->
                         <li><a href="#">&raquo;</a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
 
 
             </div>

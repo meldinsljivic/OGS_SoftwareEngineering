@@ -48,7 +48,7 @@ _________________________________________________________ -->
 
                 <div class="box">
                     <h1>My wishlist</h1>
-                    <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    <p class="lead">Check out the items that you added to your wishlist.</p>
                 </div>
 
                 
@@ -64,18 +64,18 @@ _________________________________________________________ -->
                                 <div class="flipper">
                                     <div class="front">
                                         <a href="/detail/{{$product->id}}">
-                                            <img style="object-fit: cover;" src="{{$product->imagePath}}" alt="" class="img-responsive">
+                                            <img style="object-fit: cover;" src="{{$product->image1}}" alt="" class="img-responsive">
                                         </a>
                                     </div>
                                     <div class="back">
                                         <a href="/detail/{{$product->id}}">
-                                            <img style="object-fit: cover;" src="{{$product->imagePath}}" alt="" class="img-responsive">
+                                            <img style="object-fit: cover;" src="{{$product->image1}}" alt="" class="img-responsive">
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <a href="/detail/{{$product->id}}" class="invisible">
-                                <img style="object-fit: cover;" src="{{$product->imagePath}}" alt="" class="img-responsive">
+                                <img style="object-fit: cover;" src="{{$product->image1}}" alt="" class="img-responsive">
                             </a>
                             <div class="text">
                                 <h3><a href="/detail/{{$product->id}}">{{$product->title}}</a></h3>
@@ -83,6 +83,7 @@ _________________________________________________________ -->
                                 <p class="buttons">
                                     <a href="/detail/{{$product->id}}" class="btn btn-default">View detail</a>
                                     <a href="{{ route('product.addToCart', ['id' => $product->id])}}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    
                                 </p>
                             </div>
                             <!-- /.text -->
